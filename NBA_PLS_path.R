@@ -5,7 +5,12 @@ library(colortools)
 
 
 # save team data pre Game 7 Finals
-save(teamData, file="Team_data_pre_game_7_finals.RData")
+# save(teamData, file="Team_data_pre_game_7_finals.RData")
+
+
+# load team data pre Game 7 Finals
+load("Team_data_pre_game_7_finals.RData")
+
 
 # rows of the inner model matrix
 Offense = c(0, 0, 0)
@@ -31,18 +36,17 @@ nba_blocks <- list(c(8, 11, 14, 15, 18, 24),
 nba_modes <- c("A", "A", "A")
 nba_modes2 <- c("A", "A", "B")
 
-
 # run plspm analysis
 nba_pls <- plspm(teamData, nba_path, nba_blocks, modes = nba_modes)
 summary(nba_pls)
 
-# Model Results
+
+## Model Results
 # path coefficients
 nba_pls$path_coefs
 
 # inner model
 nba_pls$inner_model
-
 
 # plotting results (inner model)
 plot(nba_pls)
