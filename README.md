@@ -1,1 +1,4 @@
-# PLS-Path-NBA
+# PLS Path NBA analysis
+***
+
+### Dependencies
