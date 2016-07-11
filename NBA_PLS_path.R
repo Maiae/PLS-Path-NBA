@@ -8,7 +8,7 @@ library(colortools)
 # save(teamData, file="Team_data_pre_game_7_finals.RData")
 
 
-# load team data pre Game 7 Finals
+# load team data pre pre game 7
 load("Team_data_pre_game_7_finals.RData")
 
 
