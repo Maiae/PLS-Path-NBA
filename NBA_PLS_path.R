@@ -26,15 +26,13 @@ colnames(nba_path) <- rownames(nba_path)
 # plot the path matrix
 innerplot(nba_path)
 
-# define list of indicators: what variables are associated with
-# what latent variables
+# define list of indicators: what variables are associated with offense, defense and success
 nba_blocks <- list(c(8, 11, 14, 15, 18, 24),
                   c(16, 20, 21),
                   c(2, 4, 25, 26))
 
 # all latent variables are measured in a reflective way
 nba_modes <- c("A", "A", "A")
-nba_modes2 <- c("A", "A", "B")
 
 # run plspm analysis
 nba_pls <- plspm(teamData, nba_path, nba_blocks, modes = nba_modes)
@@ -56,3 +54,6 @@ plot(nba_pls, what = "loadings", arr.width = 0.1)
 
 # index of success
 View(nba_pls$scores)
+
+# unidimensionality
+nba_pls$unidim
